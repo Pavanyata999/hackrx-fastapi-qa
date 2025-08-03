@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pdfplumber
+requests
+langchain-huggingface
+langchain-community
+langchain-groq
+sentence-transformers
