@@ -1,8 +1,11 @@
 fastapi
 uvicorn
-pdfplumber
-requests
+langchain
 langchain-huggingface
 langchain-community
 langchain-groq
+pdfplumber
+requests
+python-dotenv
 sentence-transformers
+faiss-cpu

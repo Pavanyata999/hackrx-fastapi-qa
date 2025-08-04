@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import List
 import os, pdfplumber, requests, asyncio
 from dotenv import load_dotenv
+import uvicorn
 
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -97,3 +98,10 @@ async def hackrx_run(
 
     answers = await asyncio.gather(*(answer_question(q) for q in body.questions))
     return {"answers": answers}
+
+# ==============================
+# MAIN ENTRY POINT FOR GCP
+# ==============================
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
